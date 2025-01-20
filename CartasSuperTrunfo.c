@@ -22,26 +22,26 @@ int main()
 
         switch (menuOption) {
             case 0:
-                printf("\nPrograma finalizado\n");
+                printf("\nPrograma finalizado!\n");
                 break;
             case 1:
-                printf("\nPopulação:");
+                printf("\nDigite a População:");
                 scanf("%d", &populacao);
 
-                printf("\nÁrea:");
+                printf("\nDigite a Área:");
                 scanf("%f", &area);
 
-                printf("\nPIB:");
+                printf("\nDigite o PIB:");
                 scanf("%f", &pib);
 
-                printf("\nQuantidade de Pontos Turísticos:");
+                printf("\nDigite a Qtde de Pontos Turísticos:");
                 scanf("%d", &countTouristic);
 
                 printf("\n---- Cidade cadastrada com Sucesso! ----");
 
                 printf("\nPopulação:%d", populacao);
-                printf("\nÁrea:%.2f", area);
-                printf("\nPIB:%.2f", pib);
+                printf("\nÁrea:%.2f km²", area);
+                printf("\nPIB:R$%.2f", pib);
                 printf("\nQuantidade de Pontos Turísticos:%d \n", countTouristic);
                 break;
             
