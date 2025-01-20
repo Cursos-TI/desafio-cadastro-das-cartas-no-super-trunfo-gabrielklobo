@@ -2,21 +2,54 @@
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+// Nessa primeira etapa criei um menu com apenas a opção de cadastro simples, no momento não sendo realizada nenhuma validação.
+int main()
+{
+    int menuOption;
 
-int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    int populacao;
+    float area;
+    float pib;
+    int countTouristic;
+
+
+    do {
+        printf("\n******* Menu *******\n");
+        printf("1 - Cadastro de cartas\n");
+        printf("0 - Sair\n");
+        printf("Digite o número da opção desejada:");
+        scanf("%d", &menuOption);
+
+        switch (menuOption) {
+            case 0:
+                printf("\nPrograma finalizado\n");
+                break;
+            case 1:
+                printf("\nPopulação:");
+                scanf("%d", &populacao);
+
+                printf("\nÁrea:");
+                scanf("%f", &area);
+
+                printf("\nPIB:");
+                scanf("%f", &pib);
+
+                printf("\nQuantidade de Pontos Turísticos:");
+                scanf("%d", &countTouristic);
+
+                printf("\n---- Cidade cadastrada com Sucesso! ----");
+
+                printf("\nPopulação:%d", populacao);
+                printf("\nÁrea:%.2f", area);
+                printf("\nPIB:%.2f", pib);
+                printf("\nQuantidade de Pontos Turísticos:%d \n", countTouristic);
+                break;
+            
+            default:
+                printf("\nOpção inválida\n");
+                break;
+        }
+    } while (menuOption != 0);
 
     return 0;
 }
