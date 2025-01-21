@@ -1,7 +1,12 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
+/**
+ *  Desafio Super Trunfo - Países
+ *  Programa simples no qual o usuário cadastra duas cartas e depois realiza comparações dos valores
+ *  Nenhum tipo de validação de dados, tamanho máximo de array ou loop infinito foi realizada, então se digitar dado errado o sistema trava
+ *  */
 
+//Classe usada para armazenar os dados das cartas
 typedef struct
 {
     char estado;
@@ -15,15 +20,26 @@ typedef struct
     float pibPerCapita;
 } Carta;
 
-
+//Método responsável por calcular a Densidade
 float calcularDensidade(int populacao, float area) {
     return (float) populacao / area; 
 }
 
+//Método responsável por calcular o PIB per Capita
 float calcularPIB(float pib, int populacao) {
     return pib / (float) populacao;
 }
 
+/**
+ * Método responsável por calcular o super poder
+ * (carta.densidade/100): Foi realizado para usar o valor invertido
+ */
+
+long double calcularSuperPoder(Carta carta){
+    return (float) carta.populacao + carta.area + carta.pib + (float) carta.qtdePontosTuristicos + (carta.densidade/100) + carta.pibPerCapita;
+}
+
+//Método responsável pelo cadastro das informações da carta
 Carta cadastro()
 {
     Carta carta;
@@ -65,10 +81,10 @@ Carta cadastro()
     printf("\nPIB per Capita:%.2f \n", carta.pibPerCapita);
 }
 
-long double calcularSuperPoder(Carta carta){
-    return (float) carta.populacao + carta.area + carta.pib + (float) carta.qtdePontosTuristicos + (carta.densidade/100) + carta.pibPerCapita;
-}
-
+/**
+ * Método responsável por comparar e exibir os valores conforme documentação 
+ * A saída da comparação será 1 ou 0, caso a relação seja verdadeira ou falsa. Se o resultado da comparação for 1, a carta 1 ganhou; se o resultado for 0, a carta 2 ganhou.
+ */
 void compararExibirValores(Carta arrayCartasComparacao[2]){
     Carta carta1 = arrayCartasComparacao[0];
     Carta carta2 = arrayCartasComparacao[1];
@@ -83,6 +99,9 @@ void compararExibirValores(Carta arrayCartasComparacao[2]){
     printf("\nSuper Poder:%d \n", calcularSuperPoder(carta1) > calcularSuperPoder(carta2));
 }
 
+/**
+ * Função principal, resposável por iniciar o programa e gerenciar o menu
+ */
 int main()
 {
     int menuOption;
