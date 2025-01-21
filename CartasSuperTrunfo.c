@@ -10,7 +10,7 @@
 typedef struct
 {
     char estado;
-    char codigoCarta[2];
+    char codigoCarta[3];
     char nomeCidade[50];
     unsigned int populacao;
     float area;
@@ -48,10 +48,10 @@ Carta cadastro()
     scanf("%s", &carta.estado);
 
     printf("\nDigite dois números para o código da carta(ex: 01,02...):");
-    scanf("%s", &carta.codigoCarta);
+    scanf("%2s", carta.codigoCarta);
 
     printf("\nDigite o nome da cidade(Máximo 50 letras):");
-    scanf("%s", &carta.nomeCidade);
+    scanf("%s", carta.nomeCidade);
 
     printf("\nDigite a População:");
     scanf("%d", &carta.populacao);
@@ -89,7 +89,8 @@ void compararExibirValores(Carta arrayCartasComparacao[2]){
     Carta carta1 = arrayCartasComparacao[0];
     Carta carta2 = arrayCartasComparacao[1];
 
-    printf("#### Comparações ####\n");
+    printf("\n#### Comparações ####\n");
+    printf("---- Se for 1 a Carta 1 ganhou -- Se for 0 Carta 2 ganhou ----\n");
     printf("\nPopulação:%d", carta1.populacao > carta2.populacao);
     printf("\nÁrea:%d", carta1.area > carta2.area);
     printf("\nPIB:%d", carta1.pib > carta2.pib);
