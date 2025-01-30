@@ -79,6 +79,8 @@ Carta cadastro()
     printf("\nQuantidade de Pontos Turísticos:%d", carta.qtdePontosTuristicos);
     printf("\nDensidade Populacional:%.2f",  carta.densidade);
     printf("\nPIB per Capita:%.2f \n", carta.pibPerCapita);
+
+    return carta;
 }
 
 /**
